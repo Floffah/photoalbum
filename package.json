@@ -1,0 +1,17 @@
+{
+  "packageManager": "bun@1.0.29",
+  "scripts": {
+    "dev": "turbo dev",
+    "build": "turbo build",
+    "test": "turbo test",
+    "lint": "turbo lint"
+  },
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "devDependencies": {
+    "npm-check-updates": "^16.14.15",
+    "turbo": "^1.12.5"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "name": "api",
+  "scripts": {
+    "build": "gleam build",
+    "dev": "gleam run",
+    "test": "gleam test",
+    "format": "gleam format",
+    "lint": "gleam check"
+  }
+}
