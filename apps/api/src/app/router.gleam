@@ -2,6 +2,7 @@ import wisp.{type Request, type Response}
 import gleam/string_builder
 import gleam/http.{Get, Post}
 import app/web
+import gleam/json.{bool, object, to_string_builder}
 
 pub fn handle_request(req: Request) -> Response {
   use _req <- web.middleware(req)
@@ -16,7 +17,7 @@ pub fn handle_request(req: Request) -> Response {
 fn root_endpoint(req: Request) -> Response {
   use <- wisp.require_method(req, Get)
 
-  let body = string_builder.from_string("{ \"ok\": true }")
+  let body = to_string_builder(object([#("ok", bool(True))]))
 
   wisp.ok()
   |> wisp.json_body(body)
